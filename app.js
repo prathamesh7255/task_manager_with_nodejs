@@ -1,4 +1,3 @@
-require('./db/connect');
 const express=require('express');
 const app=express();
 const task=require('./routes/task');
@@ -7,7 +6,7 @@ require('dotenv').config();
 
 app.use(express.json());
 
-app.get('/home',(req,res)=>{
+app.get('/',(req,res)=>{
     res.send(`Hey there! This is the Task Manager app 
     you are looking for`);
 })
