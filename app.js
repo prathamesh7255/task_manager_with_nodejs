@@ -1,6 +1,7 @@
 const express=require('express');
 const app=express();
 const task=require('./routes/task');
+const error=require('./error');
 const connectDB=require('./db/connect');
 require('dotenv').config();
 
@@ -12,6 +13,7 @@ app.get('/',(req,res)=>{
 })
 
 app.use('/api/v1/task',task);
+app.use(error);
 
 const port=5000;
 
